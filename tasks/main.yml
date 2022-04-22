@@ -1,0 +1,32 @@
+---
+- include_role:
+    name: docker
+- name: Include vars of stuff.yaml into the 'stuff' variable (2.2).
+  include_vars:
+    file: creds.yml
+
+
+- name: Log into DockerHub
+  docker_login:
+    username: "{{ dockerhub_username }}"
+    password: "{{ dockerhub_pass }}"
+
+- name: Create webapp container
+  community.docker.docker_container:
+    name: "webapp_{{ item }}"
+    image: "pipetky/exam:webapp"
+    recreate: yes
+    networks:
+      - name: web
+    ports:
+      - "500{{ item }}:5000"
+  loop:
+    - 0
+    - 1
+    - 2
+
+
+
+
+
+
