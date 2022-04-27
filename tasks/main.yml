@@ -18,7 +18,10 @@
     recreate: yes
     networks:
       - name: web
-
+  loop:
+    - 0
+    - 1
+    - 2
 
 
 
