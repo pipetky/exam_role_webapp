@@ -18,12 +18,7 @@
     recreate: yes
     networks:
       - name: web
-    ports:
-      - "500{{ item }}:5000"
-  loop:
-    - 0
-    - 1
-    - 2
+
 
 
 
