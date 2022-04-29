@@ -18,7 +18,7 @@
     recreate: yes
     networks:
       - name: web
-  loop: "{{ range(0, 2) }}"
+  loop: "{{ range(0, backend_count) }}"
 
   #   - 0
   #   - 1
