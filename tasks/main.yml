@@ -18,10 +18,11 @@
     recreate: yes
     networks:
       - name: web
-  loop:
-    - 0
-    - 1
-    - 2
+  loop: "{{ range(0, 2) }}"
+
+  #   - 0
+  #   - 1
+  #   - 2
 
 
 
